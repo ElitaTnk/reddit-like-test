@@ -1,1 +1,1 @@
-<app-post *ngFor="let item of list" [item]=item></app-post>
+<app-post *ngFor="let item of list" [item]=item (sendDetail)="seeDetail(item)"></app-post>

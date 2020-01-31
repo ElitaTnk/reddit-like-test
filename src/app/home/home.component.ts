@@ -7,6 +7,7 @@ import { HomeService } from './home.service';
 })
 export class HomeComponent implements OnInit {
   data: [] = [];
+  detail: object;
   constructor(
     private homeService: HomeService
   ) { }
@@ -15,6 +16,11 @@ export class HomeComponent implements OnInit {
     this.homeService.getPost().then(response => {
       this.data = response;
     });
+  }
+
+  sentDetail(item): void {
+    this.detail = item;
+    console.log('a')
   }
 
 }

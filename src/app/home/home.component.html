@@ -1,2 +1,4 @@
-<app-list [list]=data></app-list>
-<app-detail></app-detail>
+<div class="list">
+  <app-post *ngFor="let item of data" [item]=item (seeDetail)="sentDetail(item)"></app-post>
+</div>
+<app-detail [detail]=detail></app-detail>

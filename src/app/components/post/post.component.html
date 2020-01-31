@@ -1,11 +1,10 @@
-<div class="post">
-  <figure *ngIf="item.thumbnail">
-    <img src="{{item.thumbnail}}" />
+<div class="post" (click)="sendDetail(item)">
+  <figure>
+    <img src="{{item.thumbnail}}"  *ngIf="item.thumbnail !== 'default' && item.thumbnail !== 'self'"/>
+    <img src="https://via.placeholder.com/150"  *ngIf="item.thumbnail === 'default' || item.thumbnail === 'self'"/>
   </figure>
-  <h3>{{item.name}}</h3>
-  <span>x hours ago</span>
-  <div>comments (1)</div>
-  <div>
-    status
-  </div>
+  <h3>{{item.title}}</h3>
+  <p>{{item.author}}</p>
+  <span>{{ item.created | date:'shortTime'}}</span>
+  <div>comments ({{item.num_comments}})</div>
 </div>
