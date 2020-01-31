@@ -1,6 +1,6 @@
 <div class="post">
-  <figure>
-    <img src="{{item.img}}" />
+  <figure *ngIf="item.thumbnail">
+    <img src="{{item.thumbnail}}" />
   </figure>
   <h3>{{item.name}}</h3>
   <span>x hours ago</span>

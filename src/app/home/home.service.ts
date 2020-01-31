@@ -6,6 +6,7 @@ import { map, catchError } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class HomeService {
+  data: [];
   constructor(public http: HttpClient) {}
 
   getPost(): Promise<any> {
@@ -14,8 +15,8 @@ export class HomeService {
       .pipe(
         catchError(err => throwError(err)),
         map((response: any) => {
-          return response;
-        })
+          return this.data = response.data.children.map(item => item.data);
+        }),
       ).toPromise();
   }
 }
