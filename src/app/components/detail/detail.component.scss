@@ -1,0 +1,10 @@
+:host {
+  flex: 1;
+}
+.detail {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 2rem;
+}

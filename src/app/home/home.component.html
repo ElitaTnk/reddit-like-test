@@ -1,4 +1,9 @@
 <div class="list">
-  <app-post *ngFor="let item of data" [item]=item (seeDetail)="sentDetail(item)"></app-post>
+  <app-post
+  *ngFor="let item of data"
+   [item]=item (seeDetail)="sentDetail(item)"
+    (removeItem)="dismissOne(item)" [@fadeInOut]="data">
+          ></app-post>
+  <button (click)="dismissAll()" *ngIf="data && data.length > 0" class="list__button">Dismiss all</button>
 </div>
 <app-detail [detail]=detail></app-detail>

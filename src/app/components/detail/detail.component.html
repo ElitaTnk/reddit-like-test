@@ -1,3 +1,8 @@
 <div class="detail" *ngIf="detail">
-  <app-post [item]=detail ></app-post>
+  <p>{{detail.author}}</p>
+  <figure>
+    <img src="{{detail.thumbnail}}"  *ngIf="detail.thumbnail !== 'default' && detail.thumbnail !== 'self'"/>
+    <img src="https://via.placeholder.com/150"  *ngIf="detail.thumbnail === 'default' || detail.thumbnail === 'self'"/>
+  </figure>
+  <h3>{{detail.title}}</h3>
 </div>

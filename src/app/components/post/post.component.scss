@@ -1,0 +1,43 @@
+.post {
+  color: #fff;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #ccc;
+  cursor: pointer;
+  position: relative;
+  justify-content: space-between;
+  transition: all .3s linear;
+
+  &:after {
+    content: '>';
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &:active {
+    background-color: #fff;
+  }
+
+
+  &__body {
+    display: flex;
+    align-items: center;
+  }
+
+  &__image {
+    margin: 0 .875rem 1rem 0;
+  }
+
+  &__title {
+    font-weight: normal;
+    font-size: 0.875rem;
+  }
+
+  &__author {
+    font-size: 1.125rem;
+  }
+}

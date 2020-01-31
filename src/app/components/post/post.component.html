@@ -1,10 +1,16 @@
-<div class="post" (click)="sendDetail(item)">
-  <figure>
-    <img src="{{item.thumbnail}}"  *ngIf="item.thumbnail !== 'default' && item.thumbnail !== 'self'"/>
-    <img src="https://via.placeholder.com/150"  *ngIf="item.thumbnail === 'default' || item.thumbnail === 'self'"/>
-  </figure>
-  <h3>{{item.title}}</h3>
-  <p>{{item.author}}</p>
-  <span>{{ item.created | date:'shortTime'}}</span>
-  <div>comments ({{item.num_comments}})</div>
+<div class="post" (click)="$event.stopPropagation();sendDetail(item)">
+    <p class="post__author">{{item.author}}</p>
+    <span class="post__status">{{item.status || ''}}</span>
+    <span class="post__datetime">{{ item.created | date:'shortTime'}}</span>
+
+  <div class="post__body">
+    <figure class="post__image">
+      <img src="{{item.thumbnail}}"  *ngIf="item.thumbnail !== 'default' && item.thumbnail !== 'self'"/>
+      <img src="https://via.placeholder.com/150"  *ngIf="item.thumbnail === 'default' || item.thumbnail === 'self'"/>
+    </figure>
+    <h3 class="post__title">{{item.title}}</h3>
+
+  </div>
+  <button class="post__dismiss" (click)="$event.stopPropagation();dismissOne(item)">dismiss</button>
+  <div class="post__comments">comments ({{item.num_comments}})</div>
 </div>

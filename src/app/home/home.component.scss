@@ -1,0 +1,26 @@
+:host {
+  display: flex;
+}
+
+.list {
+  background-color: #000;
+  max-width: 20rem;
+  max-height: 100vh;
+  overflow-y: auto;
+  flex-basis: 100%;
+  position: relative;
+  height: 100vh;
+
+  &__button {
+    cursor: pointer;
+    position: sticky;
+    bottom: 0;
+    padding: 1rem;
+    color: orange;
+    width: 100%;
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: #000;
+    border: 0 none;
+  }
+}
